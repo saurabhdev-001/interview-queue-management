@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Interview Queue | VIVIDHATA</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-slate-950 text-white">
+
+<!-- ========================= -->
+<!-- NAVIGATION -->
+<!-- ========================= -->
+
+<nav class="border-b border-slate-800">
+
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
+
+        <div>
+            <h1 class="text-xl font-bold tracking-wide">
+                VIVIDHATA
+            </h1>
+
+            <p class="text-xs text-slate-400">
+                Interview Portal
+            </p>
+        </div>
+
+        <div class="flex items-center gap-3">
+
+    <span
+            class="rounded-full border border-slate-700 px-4 py-2 text-sm text-slate-300">
+        Student Portal
+    </span>
+
+            <a
+                    href="/admin/login.html"
+                    class="rounded-full bg-indigo-500 px-4 py-2 text-sm font-medium text-white transition hover:bg-indigo-400">
+                Admin Login →
+            </a>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- ========================= -->
+<!-- MAIN -->
+<!-- ========================= -->
+
+<main
+        class="mx-auto flex min-h-[calc(100vh-81px)] max-w-7xl items-center px-6 py-12">
+
+    <div
+            class="grid w-full gap-12 lg:grid-cols-2 lg:items-center">
+
+
+        <!-- ========================= -->
+        <!-- LEFT SIDE -->
+        <!-- ========================= -->
+
+        <section>
+
+            <p
+                    class="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-indigo-400">
+                Club Interviews 2026
+            </p>
+
+
+            <h2
+                    class="max-w-xl text-5xl font-bold leading-tight md:text-6xl">
+
+                Join the
+
+                <span class="text-indigo-400">
+                    Interview Queue.
+                </span>
+
+            </h2>
+
+
+            <p
+                    class="mt-6 max-w-lg text-lg leading-8 text-slate-400">
+
+                Register your details and secure your place in
+                the interview queue.
+
+                No account required.
+
+            </p>
+
+
+            <!-- Feature badges -->
+
+            <div class="mt-8 flex flex-wrap gap-3">
+
+                <span
+                        class="rounded-full bg-slate-900 px-4 py-2 text-sm text-slate-300">
+                    Fast
+                </span>
+
+                <span
+                        class="rounded-full bg-slate-900 px-4 py-2 text-sm text-slate-300">
+                    Fair
+                </span>
+
+                <span
+                        class="rounded-full bg-slate-900 px-4 py-2 text-sm text-slate-300">
+                    Organized
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================= -->
+        <!-- RIGHT SIDE -->
+        <!-- ========================= -->
+
+        <section
+                class="rounded-3xl border border-slate-800 bg-slate-900/80 p-8 shadow-2xl">
+
+
+            <!-- ========================= -->
+            <!-- REGISTRATION CARD -->
+            <!-- ========================= -->
+
+            <div id="registrationSection">
+
+                <div class="mb-8">
+
+                    <h3 class="text-2xl font-bold">
+                        Register for Interview
+                    </h3>
+
+                    <p class="mt-2 text-sm text-slate-400">
+                        Enter your details to join the waiting queue.
+                    </p>
+
+                </div>
+
+
+                <form
+                        id="candidateForm"
+                        class="space-y-6">
+
+
+                    <!-- ========================= -->
+                    <!-- NAME -->
+                    <!-- ========================= -->
+
+                    <div>
+
+                        <label
+                                for="name"
+                                class="mb-2 block text-sm font-medium text-slate-300">
+
+                            Full Name
+
+                        </label>
+
+
+                        <input
+                                id="name"
+                                name="name"
+                                type="text"
+                                autocomplete="name"
+                                placeholder="Enter your full name"
+                                class="w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-white outline-none transition placeholder:text-slate-600 focus:border-indigo-500"
+                        >
+
+
+                        <p
+                                id="nameError"
+                                class="mt-2 hidden text-sm text-red-400">
+                        </p>
+
+
+                        <p
+                                id="nameSuccess"
+                                class="mt-2 hidden text-sm text-emerald-400">
+                        </p>
+
+                    </div>
+
+
+                    <!-- ========================= -->
+                    <!-- ROLL NUMBER -->
+                    <!-- ========================= -->
+
+                    <div>
+
+                        <label
+                                for="rollNumber"
+                                class="mb-2 block text-sm font-medium text-slate-300">
+
+                            Roll Number
+
+                        </label>
+
+
+                        <input
+                                id="rollNumber"
+                                name="rollNumber"
+                                type="text"
+                                autocomplete="off"
+                                placeholder="e.g. 25112CN125"
+                                class="w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-white outline-none transition placeholder:text-slate-600 focus:border-indigo-500"
+                        >
+
+
+                        <p
+                                id="rollError"
+                                class="mt-2 hidden text-sm text-red-400">
+                        </p>
+
+
+                        <p
+                                id="rollSuccess"
+                                class="mt-2 hidden text-sm text-emerald-400">
+                        </p>
+
+                    </div>
+
+
+                    <!-- ========================= -->
+                    <!-- APPLIED ROLE -->
+                    <!-- ========================= -->
+
+                    <div>
+
+                        <label
+                                class="mb-3 block text-sm font-medium text-slate-300">
+
+                            Applied Role
+
+                        </label>
+
+
+                        <!-- Stores selected role -->
+
+                        <input
+                                type="hidden"
+                                id="appliedRole"
+                                name="appliedRole"
+                        >
+
+
+                        <div
+                                class="grid grid-cols-2 gap-3 sm:grid-cols-3">
+
+
+                            <!-- Technical -->
+
+                            <button
+                                    type="button"
+                                    class="role-card group rounded-xl border border-slate-700 bg-slate-950 p-4 text-left transition hover:-translate-y-1 hover:border-indigo-500 hover:bg-slate-800"
+                                    data-role="Technical">
+
+                                <div class="text-2xl">
+                                    💻
+                                </div>
+
+                                <div
+                                        class="mt-2 font-semibold text-white">
+                                    Technical
+                                </div>
+
+                                <div
+                                        class="mt-1 text-xs text-slate-500">
+                                    Tech & Development
+                                </div>
+
+                            </button>
+
+
+                            <!-- Management -->
+
+                            <button
+                                    type="button"
+                                    class="role-card group rounded-xl border border-slate-700 bg-slate-950 p-4 text-left transition hover:-translate-y-1 hover:border-indigo-500 hover:bg-slate-800"
+                                    data-role="Management">
+
+                                <div class="text-2xl">
+                                    📊
+                                </div>
+
+                                <div
+                                        class="mt-2 font-semibold text-white">
+                                    Management
+                                </div>
+
+                                <div
+                                        class="mt-1 text-xs text-slate-500">
+                                    Planning & Operations
+                                </div>
+
+                            </button>
+
+
+                            <!-- Cultural -->
+
+                            <button
+                                    type="button"
+                                    class="role-card group rounded-xl border border-slate-700 bg-slate-950 p-4 text-left transition hover:-translate-y-1 hover:border-indigo-500 hover:bg-slate-800"
+                                    data-role="Cultural">
+
+                                <div class="text-2xl">
+                                    🎭
+                                </div>
+
+                                <div
+                                        class="mt-2 font-semibold text-white">
+                                    Cultural
+                                </div>
+
+                                <div
+                                        class="mt-1 text-xs text-slate-500">
+                                    Events & Culture
+                                </div>
+
+                            </button>
+
+
+                            <!-- PR -->
+
+                            <button
+                                    type="button"
+                                    class="role-card group rounded-xl border border-slate-700 bg-slate-950 p-4 text-left transition hover:-translate-y-1 hover:border-indigo-500 hover:bg-slate-800"
+                                    data-role="PR">
+
+                                <div class="text-2xl">
+                                    📢
+                                </div>
+
+                                <div
+                                        class="mt-2 font-semibold text-white">
+                                    PR
+                                </div>
+
+                                <div
+                                        class="mt-1 text-xs text-slate-500">
+                                    Public Relations
+                                </div>
+
+                            </button>
+
+
+                            <!-- Editorial -->
+
+                            <button
+                                    type="button"
+                                    class="role-card group rounded-xl border border-slate-700 bg-slate-950 p-4 text-left transition hover:-translate-y-1 hover:border-indigo-500 hover:bg-slate-800"
+                                    data-role="Editorial">
+
+                                <div class="text-2xl">
+                                    ✍️
+                                </div>
+
+                                <div
+                                        class="mt-2 font-semibold text-white">
+                                    Editorial
+                                </div>
+
+                                <div
+                                        class="mt-1 text-xs text-slate-500">
+                                    Writing & Content
+                                </div>
+
+                            </button>
+
+                        </div>
+
+
+                        <p
+                                id="roleError"
+                                class="mt-2 hidden text-sm text-red-400">
+
+                            Please select a role.
+
+                        </p>
+
+                    </div>
+
+
+                    <!-- ========================= -->
+                    <!-- SUBMIT -->
+                    <!-- ========================= -->
+
+                    <button
+                            id="submitButton"
+                            type="submit"
+                            disabled
+                            class="w-full cursor-not-allowed rounded-xl bg-indigo-500/40 px-5 py-3.5 font-semibold text-white transition">
+
+                        Join Interview Queue
+
+                    </button>
+
+                </form>
+
+            </div>
+
+
+            <!-- ========================= -->
+            <!-- MESSAGE -->
+            <!-- ========================= -->
+
+            <div
+                    id="message"
+                    class="mt-6 hidden rounded-xl border border-slate-700 bg-slate-950 p-4 text-sm">
+            </div>
+
+
+            <!-- ========================= -->
+            <!-- QUEUE STATUS -->
+            <!-- ========================= -->
+
+            <div
+                    id="queueStatus"
+                    class="mt-8 hidden overflow-hidden rounded-3xl border border-slate-800 bg-slate-950">
+
+
+                <div class="p-8 text-center">
+
+
+                    <!-- Success icon -->
+
+                    <div
+                            class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500/10 text-3xl text-emerald-400">
+
+                        ✓
+
+                    </div>
+
+
+                    <!-- Title -->
+
+                    <h3
+                            class="mt-5 text-2xl font-bold text-white">
+
+                        You're in the queue!
+
+                    </h3>
+
+
+                    <p
+                            class="mt-2 text-sm text-slate-400">
+
+                        Your registration was successful.
+
+                    </p>
+
+
+                    <!-- Queue position -->
+
+                    <div class="mt-8">
+
+                        <p
+                                class="text-sm uppercase tracking-widest text-slate-500">
+
+                            Queue Position
+
+                        </p>
+
+
+                        <p
+                                id="queuePosition"
+                                class="mt-2 text-6xl font-bold text-indigo-400">
+
+                            —
+
+                        </p>
+
+                    </div>
+
+
+                    <!-- LIVE STATUS -->
+
+                    <div
+                            id="statusBadge"
+                            class="mt-6 inline-flex rounded-full bg-amber-500/10 px-5 py-2 text-sm font-medium text-amber-400">
+
+                        🟡 Waiting
+
+                    </div>
+
+
+                    <!-- Candidate information -->
+
+                    <div
+                            class="mt-8 space-y-2 text-sm text-slate-400">
+
+
+                        <p>
+
+                            Candidate:
+
+                            <span
+                                    id="statusName"
+                                    class="font-semibold text-white">
+                            </span>
+
+                        </p>
+
+
+                        <p>
+
+                            Roll Number:
+
+                            <span
+                                    id="statusRoll"
+                                    class="font-semibold text-white">
+                            </span>
+
+                        </p>
+
+
+                        <p>
+
+                            Applied Role:
+
+                            <span
+                                    id="statusRole"
+                                    class="font-semibold text-white">
+                            </span>
+
+                        </p>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</main>
+
+
+<!-- JavaScript -->
+
+<script src="/js/student.js"></script>
+
+</body>
+</html>
